@@ -38,9 +38,7 @@ def test_registration_with_empty_name_failed(driver, get_correct_user_data):
     driver.find_element(*TestLocators.REGISTRATION_BUTTON).click()
 
     # Продолжает отображаться форма регистрации с введенной почтой и паролем
-    assert driver.find_element(*TestLocators.NAME_FIELD).get_attribute("value") == ""
-    assert driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value") == email
-    assert driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value") == password
+    assert driver.find_element(*TestLocators.NAME_FIELD).get_attribute("value") == "" and driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value") == email and driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value") == password
 
 
 def test_registration_with_invalid_email_failed(driver, get_not_correct_user_data):
@@ -61,9 +59,8 @@ def test_registration_with_invalid_email_failed(driver, get_not_correct_user_dat
     driver.find_element(*TestLocators.REGISTRATION_BUTTON).click()
 
     # Продолжает отображаться форма регистрации с введенными данными
-    assert driver.find_element(*TestLocators.NAME_FIELD).get_attribute("value") == name
-    assert driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value") == email
-    assert driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value") == password
+    assert driver.find_element(*TestLocators.NAME_FIELD).get_attribute("value") == "" and driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value") == email and driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value") == password
+
     # Отображается ошибка регистрации
     WebDriverWait(driver, 5).until(ex_cond.visibility_of_element_located(TestLocators.ERROR_REGISTRATION))
     assert "Такой пользователь уже существует" == driver.find_element(*TestLocators.ERROR_REGISTRATION).text

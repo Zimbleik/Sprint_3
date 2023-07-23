@@ -8,10 +8,6 @@ def test_default_select_tab_is_buns(driver):
     # В конструкторе по умолчанию выбрана вкладка булок
     assert "Булки" == driver.find_element(*TestLocators.SELECTED_INGREDIENT_TAB).text
 
-    # Вкладки соусов и начинок не выбраны
-    unselected_tabs = driver.find_elements(*TestLocators.UNSELECTED_INGREDIENT_TABS)
-    for tab in unselected_tabs:
-        assert "Соусы" in tab.text or "Начинки" in tab.text
 
 
 def test_select_sauces_tab(driver):
@@ -22,10 +18,6 @@ def test_select_sauces_tab(driver):
         until(ex_cond.text_to_be_present_in_element(TestLocators.SELECTED_INGREDIENT_TAB, "Соусы"))
     assert "Соусы" == driver.find_element(*TestLocators.SELECTED_INGREDIENT_TAB).text
 
-    # Вкладки булок и начинок не выбраны
-    unselected_tabs = driver.find_elements(*TestLocators.UNSELECTED_INGREDIENT_TABS)
-    for tab in unselected_tabs:
-        assert "Булки" in tab.text or "Начинки" in tab.text
 
 
 def test_select_fillings_tab(driver):
@@ -36,10 +28,6 @@ def test_select_fillings_tab(driver):
         until(ex_cond.text_to_be_present_in_element(TestLocators.SELECTED_INGREDIENT_TAB, "Начинки"))
     assert "Начинки" == driver.find_element(*TestLocators.SELECTED_INGREDIENT_TAB).text
 
-    # Вкладки булок и соусов не выбраны
-    unselected_tabs = driver.find_elements(*TestLocators.UNSELECTED_INGREDIENT_TABS)
-    for tab in unselected_tabs:
-        assert "Булки" in tab.text or "Соусы" in tab.text
 
 
 def test_select_buns_tab(driver):

@@ -13,18 +13,18 @@ class TestLocators:
     PASSWORD_FIELD = By.XPATH, \
         '//*[text()="Пароль"]/following-sibling::input'  # Поле ввода пароля
     REGISTRATION_BUTTON = By.XPATH,\
-        '//*[contains(@class, "button_button_type_primary")]'  # Кнопка "Зарегистрироваться"
+        '//*[text()="Зарегистрироваться"]' # Кнопка "Зарегистрироваться
     ERROR_REGISTRATION = By.XPATH, \
-        '//*[contains(@class, "input__error text_type_main-default")]'  # Ошибка регистрации
+        '//*[contains(@class, "input__error text_type_main-default") or contains(text(), "Такой пользователь уже существует")]'  # Ошибка регистрации
 
     ORDER_BUTTON = By.XPATH, \
-        '//*[contains(@class, "button_button_type_primary") and contains(text(), "Оформить заказ")]'  # Кнопка заказа
+        '//*[text()="Оформить заказ"]]'  # Кнопка заказа
     ENTER_LINK = By.LINK_TEXT, \
         "Войти"  # Ссылка на форму авторизации
     ENTER_IN_ACCOUNT_BUTTON = By.XPATH, \
         '//*[text()="Войти в аккаунт"]'  # Кнопка «Войти в аккаунт»
     ENTER_BUTTON = By.XPATH, \
-        '//*[contains(@class, "button_button_type_primary") and contains(text(), "Войти")]'  # Кнопка «Войти»
+        '//*[text()="Войти"]'  # Кнопка «Войти»
     RECOVERY_LINK = By.LINK_TEXT, \
         "Восстановить пароль"  # Ссылка на форму восстановления
 
@@ -42,16 +42,16 @@ class TestLocators:
         '//*[text()="Выход"]'  # Кнопка «Выход»
 
     UNSELECTED_INGREDIENT_TABS = By.XPATH,\
-        '//*[contains(@class, "tab_tab") and not(contains(@class, "current"))]/child::span'  # Невыбранные вкладки
+        'html/body/div/div/main/section[contains(@class, "BurgerIngredients_ingredients")]/div/div[not(contains(@class, "current"))]/child::span'  # Невыбранные вкладки
     SELECTED_INGREDIENT_TAB = By.XPATH,\
-        '//*[contains(@class, "tab_tab") and contains(@class, "current")]/child::span'  # Выбранная вкладка
+        'html/body/div/div/main/section[contains(@class, "BurgerIngredients_ingredients")]/div/div[contains(@class, "current")]/child::span'  # Выбранная вкладка
     BUNS_TUB = By.XPATH,\
-        '//*[contains(@class, "text text_type_main-default") and contains(text(), "Булки")]'  # Вкладка булок
+        '//span[contains(text(), "Булки")]'  # Вкладка булок
     SAUCES_TUB = By.XPATH, \
-        '//*[contains(@class, "text text_type_main-default") and contains(text(), "Соусы")]'  # Вкладка соусов
+        '//span[contains(text(), "Соусы")]'  # Вкладка соусов
     FILLINGS_TUB = By.XPATH, \
-        '//*[contains(@class, "text text_type_main-default") and contains(text(), "Начинки")]'  # Вкладка начинок
+        '//span[contains(text(), "Начинки")]'  # Вкладка начинок
     BUNS_HEADER = By.XPATH, \
-        '//*[contains(@class, "text text_type_main-medium") and contains(text(), "Булки")]'  # Заголовок булок
+        '//h2[contains(text(), "Булки")]'  # Заголовок булок
     FILLINGS_HEADER = By.XPATH, \
-        '//*[contains(@class, "text text_type_main-medium") and contains(text(), "Начинки")]'  # Заголовок начинок
+        '//h2[contains(text(), "Начинки")]'  # Заголовок начинок

@@ -28,6 +28,4 @@ def test_logout_by_button_in_personal_account(driver):
     WebDriverWait(driver, 5).until_not(ex_cond.url_contains("/account/profile"))
 
     # Отображается страница входа
-    assert "" == driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value")
-    assert "" == driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value")
-    assert "https://stellarburgers.nomoreparties.site/login" == driver.current_url
+    assert "" == driver.find_element(*TestLocators.EMAIL_FIELD).get_attribute("value") and "" == driver.find_element(*TestLocators.PASSWORD_FIELD).get_attribute("value") and "https://stellarburgers.nomoreparties.site/login" == driver.current_url

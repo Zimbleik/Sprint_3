@@ -28,8 +28,7 @@ def test_go_from_personal_account_in_constructor_by_tab(driver):
     WebDriverWait(driver, 5).until_not(ex_cond.url_contains("/account/profile"))
 
     # Отображается страница с конструктором
-    assert "Соберите бургер" == driver.find_element(*TestLocators.INGREDIENTS_HEADER).text
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "Соберите бургер" == driver.find_element(*TestLocators.INGREDIENTS_HEADER).text and "https://stellarburgers.nomoreparties.site/" == driver.current_url
 
 
 def test_go_from_personal_account_in_constructor_by_logo(driver):
@@ -57,5 +56,4 @@ def test_go_from_personal_account_in_constructor_by_logo(driver):
     WebDriverWait(driver, 5).until_not(ex_cond.url_contains("/account/profile"))
 
     # Отображается страница с конструктором
-    assert "Соберите бургер" == driver.find_element(*TestLocators.INGREDIENTS_HEADER).text
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "Соберите бургер" == driver.find_element(*TestLocators.INGREDIENTS_HEADER).text and "https://stellarburgers.nomoreparties.site/" == driver.current_url

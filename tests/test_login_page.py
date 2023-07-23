@@ -20,7 +20,7 @@ def test_login_by_button_on_main_page(driver):
 
     # Окно сменилось на главное с кнопкой оформления заказа
     WebDriverWait(driver, 5).until(ex_cond.visibility_of_element_located(TestLocators.ORDER_BUTTON))
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url and "Оформить заказ" == driver.find_element(*TestLocators.ORDER_BUTTON).text
 
 
 def test_login_by_personal_account_button(driver):
@@ -40,7 +40,7 @@ def test_login_by_personal_account_button(driver):
 
     # Окно сменилось на главное с кнопкой оформления заказа
     WebDriverWait(driver, 5).until(ex_cond.visibility_of_element_located(TestLocators.ORDER_BUTTON))
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url and "Оформить заказ" == driver.find_element(*TestLocators.ORDER_BUTTON).text
 
 
 def test_login_across_button_in_registration_form(driver):
@@ -65,7 +65,7 @@ def test_login_across_button_in_registration_form(driver):
 
     # Окно сменилось на главное с кнопкой оформления заказа
     WebDriverWait(driver, 5).until(ex_cond.visibility_of_element_located(TestLocators.ORDER_BUTTON))
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url and "Оформить заказ" == driver.find_element(*TestLocators.ORDER_BUTTON).text
 
 
 def test_login_across_button_in_password_recovery_form(driver):
@@ -93,4 +93,4 @@ def test_login_across_button_in_password_recovery_form(driver):
 
     # Окно сменилось на главное с кнопкой оформления заказа
     WebDriverWait(driver, 5).until(ex_cond.visibility_of_element_located(TestLocators.ORDER_BUTTON))
-    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url
+    assert "https://stellarburgers.nomoreparties.site/" == driver.current_url and "Оформить заказ" == driver.find_element(*TestLocators.ORDER_BUTTON).text
